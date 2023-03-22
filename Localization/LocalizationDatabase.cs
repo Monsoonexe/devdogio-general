@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Devdog.General.ThirdParty.UniLinq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Devdog.General.Localization
 {
     [System.Serializable]
-    [CreateAssetMenu(menuName = "Devdog/Localization Database")]
     public class LocalizationDatabase : BetterScriptableObject
     {
         [SerializeField]
