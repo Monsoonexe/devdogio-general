@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -46,7 +45,6 @@ namespace Devdog.General.Editors
         /// </summary>
         /// <returns></returns>
         protected abstract List<T> FindObjects(bool searchProjectFolder);
-
 
         public new virtual void Show()
         {

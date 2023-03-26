@@ -8,8 +8,9 @@ namespace Devdog.General.Editors
     public class ScriptPickerEditor : GenericObjectPickerBaseEditor<Type>
     {
         private static Type _type;
-        private static Type[] _ignoreTypes = new Type[0];
-        public static ScriptPickerEditor Get(System.Type type, params System.Type[] ignoreTypes)
+        private static Type[] _ignoreTypes = Array.Empty<Type>();
+
+        public static ScriptPickerEditor Get(Type type, params Type[] ignoreTypes)
         {
             _type = type;
             _ignoreTypes = ignoreTypes;
@@ -23,7 +24,8 @@ namespace Devdog.General.Editors
 
         protected override List<Type> FindObjects(bool searchProjectFolder)
         {
-            return ReflectionUtility.GetAllTypesThatImplement(_type, true).Where(o => _ignoreTypes.Contains(o) == false).ToList();
+            // TODO - this doesn't feel right. the behaviour of this instance method changes based on static _type. 
+            return ReflectionUtility.GetAllTypesThatImplement(_type, true).Where(o => !_ignoreTypes.Contains(o)).ToList();
         }
 
         protected override bool MatchesSearch(Type obj, string search)
