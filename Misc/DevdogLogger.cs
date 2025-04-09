@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Devdog.General
 {
@@ -14,8 +13,6 @@ namespace Devdog.General
         }
 
         public static LogType minimaLog = LogType.LogVerbose;
-
-
 
         public static void LogVerbose(string message)
         {
@@ -34,7 +31,6 @@ namespace Devdog.General
             }
         }
 
-
         public static void Log(string message)
         {
             Log(message, null);
@@ -48,8 +44,6 @@ namespace Devdog.General
             }
         }
 
-
-
         public static void LogWarning(string message)
         {
             LogWarning(message, null);
@@ -62,8 +56,6 @@ namespace Devdog.General
                 Debug.LogWarning(message, context);
             }
         }
-
-
 
         public static void LogError(string message)
         {

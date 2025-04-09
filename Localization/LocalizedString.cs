@@ -3,7 +3,7 @@
 namespace Devdog.General.Localization
 {
     [System.Serializable]
-    public struct LocalizedString // TODO - make struct
+    public struct LocalizedString
     {
         /// <summary>
         /// Gets the message in the currently selected language.
