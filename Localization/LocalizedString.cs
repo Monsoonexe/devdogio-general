@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Devdog.General.Localization
 {
     [System.Serializable]
-    public class LocalizedString
+    public struct LocalizedString // TODO - make struct
     {
         /// <summary>
         /// Gets the message in the currently selected language.
@@ -27,13 +25,25 @@ namespace Devdog.General.Localization
         }
 
         [SerializeField]
-        private string _key = LocalizationManager.NoKeyConstant;
+        private string _key;
 
-        public LocalizedString()
+        public string Key
         {
-
+            get
+            {
+                return KeyOrDefault(_key);
+            }
+            set
+            {
+                _key = KeyOrDefault(value);
+            }
         }
-        
+
+        private static string KeyOrDefault(string query)
+        {
+            return string.IsNullOrEmpty(query) ? LocalizationManager.NoKeyConstant : query;
+        }
+
         public LocalizedString(string key)
         {
             _key = key;

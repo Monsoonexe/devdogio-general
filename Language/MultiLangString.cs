@@ -6,16 +6,10 @@ using System.Collections;
 namespace Devdog.General
 {
     [System.Serializable]
-    public class MultiLangString
+    public struct MultiLangString
     {
         public string title;
         public string message;
-
-        /// <summary>
-        /// Required for fsm's
-        /// </summary>
-        public MultiLangString()
-        { }
 
         public MultiLangString(string title, string message)
         {

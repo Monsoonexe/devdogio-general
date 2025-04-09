@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Devdog.General
@@ -18,7 +16,6 @@ namespace Devdog.General
         [SerializeField]
         [IgnoreCustomSerialization] // Ignore in custom serializer - Let unity seriarlize this.
         private List<UnityEngine.Object> _objectReferences;
-
 
         private readonly BetterSerializationModel _serializer = new BetterSerializationModel();
 
