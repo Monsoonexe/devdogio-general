@@ -24,7 +24,7 @@ namespace Devdog.General
             GetAllFieldsInherited(obj.GetType(), fieldInfo);
 
             var fieldNames = new List<FieldInfo>();
-            foreach (var info in fieldInfo.Where(o => o.GetCustomAttributes(attribute, true).Length > 0).ToArray())
+            foreach (var info in fieldInfo.Where(o => o.GetCustomAttributes(attribute, true).Length > 0))
             {
                 fieldNames.Add(info);
             }
@@ -44,7 +44,7 @@ namespace Devdog.General
 
                     o.GetCustomAttributes(typeof(IgnoreCustomSerializationAttribute), true).Length > 0 ||
                     o.GetCustomAttributes(typeof(NonSerializedAttribute), true).Length > 0 ||
-                    o.GetCustomAttributes(typeof(HideInInspector), true).Length > 0);
+                    o.GetCustomAttributes(typeof(HideInInspector), true).Length > 0); // RSO - I don't think this attribute should have an effect on serialization
         }
 
         public static void GetAllFieldsInherited(System.Type startType, List<FieldInfo> appendList)
