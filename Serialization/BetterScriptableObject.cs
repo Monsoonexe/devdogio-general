@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Devdog.General
 {
+    /// <summary>
+    /// Provides polymorphic serialization (can serialize interfaces).
+    /// </summary>
+    /// <seealso cref="BetterMonoBehaviour"/>
     public class BetterScriptableObject : ScriptableObject, ISerializationCallbackReceiver
     {
         /// <summary>

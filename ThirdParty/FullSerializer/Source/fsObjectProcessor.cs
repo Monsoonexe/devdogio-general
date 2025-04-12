@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace Devdog.General.ThirdParty.FullSerializer {
+namespace Devdog.General.ThirdParty.FullSerializer
+{
     /// <summary>
     /// <para>
     /// Enables injecting code before/after an object has been serialized. This is most
@@ -14,7 +15,8 @@ namespace Devdog.General.ThirdParty.FullSerializer {
     /// p1#Before p2#Before /serialization/ p2#After p1#After.
     /// </para>
     /// </summary>
-    public abstract class fsObjectProcessor {
+    public abstract class fsObjectProcessor
+    {
         /// <summary>
         /// Is the processor interested in objects of the given type?
         /// </summary>
@@ -49,8 +51,8 @@ namespace Devdog.General.ThirdParty.FullSerializer {
         /// invoked even if the user passed in an existing instance.
         /// </summary>
         /// <remarks>
-        /// **IMPORTANT**: The actual instance that gets passed here is *not* guaranteed to be an a subtype of storageType, since
-        /// the value for instance is whatever the active converter returned for CreateInstance() - ie, some converters will return
+        /// **IMPORTANT**: The actual instance that gets passed here is *not* guaranteed to be a subtype of <paramref name="storageType"/>, since
+        /// the value for <paramref name="instance"/> is whatever the active converter returned for CreateInstance() - ie, some converters will return
         /// dummy types in CreateInstance() if instance creation cannot be separated from deserialization (ie, KeyValuePair).
         /// </remarks>
         /// <param name="storageType">The field/property type that is storing the instance.</param>
