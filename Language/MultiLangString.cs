@@ -1,9 +1,4 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
-
-
-namespace Devdog.General
+﻿namespace Devdog.General
 {
     [System.Serializable]
     public struct MultiLangString
@@ -38,7 +33,7 @@ namespace Devdog.General
             {
                 return string.Format(msg, vars);
             }
-            catch (Exception)
+            catch
             {
                 DevdogLogger.LogWarning("Invalid string.Format :: " + msg);
             }
