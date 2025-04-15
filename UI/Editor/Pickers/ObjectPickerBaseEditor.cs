@@ -227,7 +227,7 @@ namespace Devdog.General.Editors
             EditorGUI.LabelField(new Rect(innerPadding, topPadding + innerPadding + 10f, 200f, EditorGUIUtility.singleLineHeight), categoryName, UnityEditor.EditorStyles.boldLabel);
             float yOffset = EditorGUIUtility.singleLineHeight + 10f;
 
-            foreach (var obj in objs)
+            foreach (Object obj in objs)
             {
                 if (obj == null)
                 {
