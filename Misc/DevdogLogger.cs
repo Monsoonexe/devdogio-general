@@ -14,10 +14,14 @@ namespace Devdog.General
 
         public static LogType minimaLog = LogType.LogVerbose;
 
+        public static bool VerboseEnabled => (int)LogType.LogVerbose >= (int)minimaLog;
+        public static bool DebugEnabled => (int)LogType.Log >= (int)minimaLog;
+        public static bool WarningEnabled => (int)LogType.Warning >= (int)minimaLog;
+        public static bool ErrorEnabled => (int)LogType.Error >= (int)minimaLog;
+
         public static void LogVerbose(string message)
         {
-            //            LogVerbose(message, null);
-            if ((int)LogType.LogVerbose >= (int)minimaLog)
+            if (VerboseEnabled)
             {
                 Debug.Log(message);
             }
@@ -25,7 +29,7 @@ namespace Devdog.General
 
         public static void LogVerbose(string message, UnityEngine.Object context)
         {
-            if ((int)LogType.LogVerbose >= (int)minimaLog)
+            if (VerboseEnabled)
             {
                 Debug.Log(message, context);
             }
@@ -38,7 +42,7 @@ namespace Devdog.General
 
         public static void Log(string message, UnityEngine.Object context)
         {
-            if ((int)LogType.Log >= (int)minimaLog)
+            if (DebugEnabled)
             {
                 Debug.Log(message, context);
             }
@@ -51,7 +55,7 @@ namespace Devdog.General
 
         public static void LogWarning(string message, UnityEngine.Object context)
         {
-            if ((int)LogType.Warning >= (int)minimaLog)
+            if (WarningEnabled)
             {
                 Debug.LogWarning(message, context);
             }
@@ -64,7 +68,7 @@ namespace Devdog.General
 
         public static void LogError(string message, UnityEngine.Object context)
         {
-            if ((int)LogType.Error >= (int)minimaLog)
+            if (ErrorEnabled)
             {
                 Debug.LogError(message, context);
             }
